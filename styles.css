@@ -70,8 +70,9 @@ button:hover {
 }
 
 .logo {
-    height: 5px; /* Adjust the height as needed */
-    margin-right: 5px; /* Adjust the margin as needed */
+    width: 10px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 2px; /* Optional: Adjust the margin as needed */
 }
 
 header {
