@@ -16,3 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Select Point functionality will be implemented here.');
     });
 });
+
+function togglePanel() {
+    var sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('collapsed');
+}
