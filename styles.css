@@ -68,3 +68,14 @@ button {
 button:hover {
     background-color: #555;
 }
+
+.logo {
+    height: 50px; /* Adjust the height as needed */
+    margin-right: 20px; /* Adjust the margin as needed */
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
