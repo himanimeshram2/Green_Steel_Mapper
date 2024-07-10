@@ -13,8 +13,8 @@ header {
 }
 
 header .logo {
-    width: 100px;
-    height: auto;
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
     margin-right: 20px;
 }
 
@@ -45,6 +45,7 @@ header nav a {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transition: width 0.3s ease;
     overflow: hidden;
+    position: relative;
 }
 
 #toggle-button {
@@ -53,10 +54,13 @@ header nav a {
     border: none;
     padding: 0.5rem;
     cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 
 #sidebar-content {
-    display: block;
+    margin-top: 40px; /* Adjusted to account for the toggle button */
 }
 
 #sidebar.collapsed {
@@ -68,7 +72,7 @@ header nav a {
 }
 
 .logo {
-    width: 500px; /* Adjust the width as needed */
+    width: 100px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
     margin-right: 20px; /* Optional: Adjust the margin as needed */
 }
