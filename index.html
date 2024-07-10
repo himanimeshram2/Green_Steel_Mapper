@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Steel Economic Fairways Mapper</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+</head>
+<body>
+    <header>
+        <img src="path_to_logo" alt="Logo" class="logo">
+        <h1>Green Steel Economic Fairways Mapper</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#layers">Layers</a>
+            <a href="#location-search">Location Search</a>
+            <a href="#data-publications">Data & Publications</a>
+        </nav>
+    </header>
+    <div id="map-container">
+        <div id="map"></div>
+        <div id="sidebar">
+            <h2>Economic Fairways Mapper</h2>
+            <div class="option">
+                <label>
+                    <input type="radio" name="selection" checked> Point
+                </label>
+                <label>
+                    <input type="radio" name="selection"> Area
+                </label>
+            </div>
+            <div class="selection">
+                <label>
+                    <input type="radio" name="method" checked> Select Point
+                </label>
+                <label>
+                    <input type="radio" name="method"> Manual
+                </label>
+            </div>
+            <button id="select-point">Select Point</button>
+            <div class="analysis">
+                <label for="analysis">Analysis</label>
+                <select id="analysis">
+                    <option value="optimised">Optimised</option>
+                </select>
+            </div>
+            <div class="product">
+                <label for="product">Product</label>
+                <select id="product">
+                    <option value="liquid-steel">Liquid Steel</option>
+                </select>
+            </div>
+            <div class="slider">
+                <label for="plant-life">Plant Life (Years)</label>
+                <input type="range" id="plant-life" name="plant-life" min="0" max="25">
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
