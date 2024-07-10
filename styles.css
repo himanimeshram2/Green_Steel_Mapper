@@ -70,13 +70,12 @@ button:hover {
 }
 
 .logo {
-    width: 10px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 2px; /* Optional: Adjust the margin as needed */
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    margin-right: 20px; /* Optional: Adjust the margin as needed */
 }
 
 header {
     display: flex;
     align-items: center;
 }
-
