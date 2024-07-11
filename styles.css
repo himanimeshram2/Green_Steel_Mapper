@@ -7,7 +7,7 @@ body {
 
 #map-container {
     display: flex;
-    height: calc(100vh - 120px); /* Adjust height to accommodate the header */
+    height: calc(100vh - 120px); /* Adjusted for header height */
 }
 
 #map, #cesiumContainer { 
@@ -192,35 +192,44 @@ body {
 header {
     background-color: #fff;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .header-top {
     display: flex;
     align-items: center;
-    padding: 1rem;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-bottom: 2px solid #3498db;
 }
 
 .header-top .logo {
     width: 80px;
-    height: auto;
-    margin-right: 20px;
+    margin-right: 1rem;
 }
 
 .header-top h1 {
-    margin: 0;
-    font-size: 1.5rem;
     flex-grow: 1;
+    font-size: 24px;
 }
 
 .header-bottom {
-    background-color: #3498db;
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem;
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    padding: 0.5rem 1rem;
 }
 
-.header-bottom nav a {
+header nav {
+    display: flex;
+}
+
+header nav a {
     color: white;
     margin: 0 1rem;
     text-decoration: none;
@@ -228,6 +237,6 @@ header {
     align-items: center;
 }
 
-.header-bottom nav i {
+header nav a i {
     margin-right: 0.5rem;
 }
