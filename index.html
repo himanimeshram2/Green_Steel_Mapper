@@ -58,26 +58,26 @@
                     <label for="renewable-plant-capex" class="fancy-label">Renewable Plant CAPEX</label>
                     <div class="slider-group">
                         <label class="slider-label">Photovoltaic CAPEX (₹/kW): <span id="pv-capex-value">3000</span></label>
-                        <input type="range" id="pv-capex" class="fancy-slider" min="0" max="10000" step="10" value="3000">
+                        <input type="range" id="pv-capex" class="fancy-slider" min="0" max="10000" step="10" value="3000" oninput="updateSliderValue('pv-capex-value', this.value)">
                     </div>
                     <div class="slider-group">
                         <label class="slider-label">Wind CAPEX (₹/kW): <span id="wind-capex-value">9730</span></label>
-                        <input type="range" id="wind-capex" class="fancy-slider" min="0" max="10000" step="10" value="9730">
+                        <input type="range" id="wind-capex" class="fancy-slider" min="0" max="10000" step="10" value="9730" oninput="updateSliderValue('wind-capex-value', this.value)">
                     </div>
                     <div class="slider-group">
                         <label class="slider-label">Hybrid CAPEX (₹/kW): <span id="hybrid-capex-value">5420</span></label>
-                        <input type="range" id="hybrid-capex" class="fancy-slider" min="0" max="10000" step="10" value="5420">
+                        <input type="range" id="hybrid-capex" class="fancy-slider" min="0" max="10000" step="10" value="5420" oninput="updateSliderValue('hybrid-capex-value', this.value)">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="economics" class="fancy-label">Economics</label>
                     <div class="slider-group">
                         <label class="slider-label">Iron Ore Price (₹/tonne): <span id="iron-ore-price-value">1500</span></label>
-                        <input type="range" id="iron-ore-price" class="fancy-slider" min="0" max="10000" step="10" value="1500">
+                        <input type="range" id="iron-ore-price" class="fancy-slider" min="0" max="10000" step="10" value="1500" oninput="updateSliderValue('iron-ore-price-value', this.value)">
                     </div>
                     <div class="slider-group">
                         <label class="slider-label">Discount Rate (%): <span id="discount-rate-value">5</span></label>
-                        <input type="range" id="discount-rate" class="fancy-slider" min="0" max="30" step="0.1" value="5">
+                        <input type="range" id="discount-rate" class="fancy-slider" min="0" max="30" step="0.1" value="5" oninput="updateSliderValue('discount-rate-value', this.value)">
                     </div>
                 </div>
                 <div class="form-group">
@@ -110,6 +110,16 @@
             </div>
         </div>
     </div>
+    <script>
+        function togglePanel() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('collapsed');
+        }
+
+        function updateSliderValue(id, value) {
+            document.getElementById(id).innerText = value;
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

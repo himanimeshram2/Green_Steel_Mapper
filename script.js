@@ -19,22 +19,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Slider functionality
     document.getElementById("pv-capex").addEventListener("input", function() {
-        document.getElementById("pv-capex-value").textContent = this.value;
+        updateSliderValue("pv-capex-value", this.value);
     });
 
     document.getElementById("wind-capex").addEventListener("input", function() {
-        document.getElementById("wind-capex-value").textContent = this.value;
+        updateSliderValue("wind-capex-value", this.value);
     });
 
     document.getElementById("hybrid-capex").addEventListener("input", function() {
-        document.getElementById("hybrid-capex-value").textContent = this.value;
+        updateSliderValue("hybrid-capex-value", this.value);
     });
 
     document.getElementById("iron-ore-price").addEventListener("input", function() {
-        document.getElementById("iron-ore-price-value").textContent = this.value;
+        updateSliderValue("iron-ore-price-value", this.value);
     });
 
     document.getElementById("discount-rate").addEventListener("input", function() {
-        document.getElementById("discount-rate-value").textContent = this.value;
+        updateSliderValue("discount-rate-value", this.value);
     });
+
+    // Function to update slider value display
+    function updateSliderValue(id, value) {
+        document.getElementById(id).textContent = value;
+    }
+
+    // Toggle panel functionality
+    window.togglePanel = function() {
+        var sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('collapsed');
+    };
 });
