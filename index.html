@@ -6,6 +6,8 @@
     <title>Green Steel Economic Fairways Mapper</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cesium/1.84/Widgets/widgets.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cesium/1.84/Cesium.js"></script>
 </head>
 <body>
     <header>
@@ -20,10 +22,13 @@
     </header>
     <div id="map-container">
         <div id="map"></div>
+        <div id="cesiumContainer" class="hidden"></div>
         <div id="sidebar">
             <button id="toggle-button" onclick="togglePanel()">☰</button>
             <div id="sidebar-content">
                 <h2>Economic Fairways Mapper</h2>
+                <button onclick="switchTo2D()">2D Map</button>
+                <button onclick="switchTo3D()">3D Map</button>
                 <div class="option">
                     <label>
                         <input type="radio" name="selection" checked> Point

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize the map
+    // Initialize Leaflet map
     var map = L.map('map').setView([-25.2744, 133.7751], 4);
 
     // Add OpenStreetMap tile layer
@@ -15,6 +15,36 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('select-point').addEventListener('click', function() {
         alert('Select Point functionality will be implemented here.');
     });
+
+    // Initialize Cesium viewer
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0N2NkOWMyZS0wNGI5LTQ3ZjQtYWNmMy0wOGY2MDNhMGU3MzAiLCJpZCI6MjI2Nzk4LCJpYXQiOjE3MjAyNzUxNDF9.qOUx_uvZXt1hoTmnrPHerfr1thbJF0nWZb9EZBfRnqc';
+    var viewer = new Cesium.Viewer('cesiumContainer', {
+        terrainProvider: Cesium.createWorldTerrain(),
+        animation: false,
+        baseLayerPicker: false,
+        fullscreenButton: false,
+        vrButton: false,
+        timeline: false,
+        homeButton: false,
+        sceneModePicker: false,
+        geocoder: false,
+        navigationHelpButton: false,
+        infoBox: false,
+        selectionIndicator: false,
+        navigationInstructionsInitiallyVisible: false
+    });
+
+    window.switchTo2D = function() {
+        document.getElementById('map').style.display = 'block';
+        document.getElementById('cesiumContainer').style.display = 'none';
+    };
+
+    window.switchTo3D = function() {
+        document.getElementById('map').style.display = 'none';
+        document.getElementById('cesiumContainer').style.display = 'block';
+        viewer.resize();
+        viewer.scene.requestRender();
+    };
 });
 
 function togglePanel() {
