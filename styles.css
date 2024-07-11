@@ -5,25 +5,51 @@ body {
     background-color: #f0f2f5; 
 }
 
-#map { 
+#map, #cesiumContainer { 
     position: absolute; 
-    top: 0; 
+    top: 60px; 
     bottom: 0; 
-    width: 75%; 
-    height: 100%; 
+    left: 300px; 
+    right: 0; 
 }
 
-#side-panel {
+#sidebar {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 25%;
-    height: 100%;
+    top: 60px;
+    left: 0;
+    width: 300px;
+    height: calc(100vh - 60px);
     background-color: #fff;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     overflow-y: auto;
     padding: 20px;
     box-sizing: border-box;
+    transition: width 0.3s ease;
+}
+
+#sidebar.collapsed {
+    width: 40px;
+}
+
+#sidebar-content {
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+#sidebar.collapsed #sidebar-content {
+    display: none;
+}
+
+#toggle-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
 }
 
 .fancy-title {
@@ -169,6 +195,7 @@ header {
     padding: 1rem;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 header .logo {
@@ -192,46 +219,4 @@ header nav a {
     display: flex;
     height: calc(100vh - 60px);
     position: relative;
-}
-
-#map, #cesiumContainer {
-    flex-grow: 1;
-    height: 100%;
-}
-
-.hidden {
-    display: none;
-}
-
-#sidebar {
-    width: 300px;
-    background-color: #f4f4f4;
-    padding: 1rem;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    transition: width 0.3s ease;
-    overflow: hidden;
-    position: relative;
-}
-
-#toggle-button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 0.5rem;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-#sidebar-content {
-    margin-top: 40px; /* Adjusted to account for the toggle button */
-}
-
-#sidebar.collapsed {
-    width: 40px;
-}
-
-#sidebar.collapsed #sidebar-content {
-    display: none;
 }
