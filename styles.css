@@ -7,7 +7,7 @@ body {
 
 #map-container {
     display: flex;
-    height: calc(100vh - 120px); /* Adjusted height to account for header */
+    height: calc(100vh - 200px); /* Adjusted height to account for headers */
     position: relative;
 }
 
@@ -210,10 +210,12 @@ header h1 {
     flex-grow: 1;
 }
 
-header nav {
+.navigation {
+    background-color: #444;
+    color: white;
+    padding: 0.5rem 1rem;
     display: flex;
     justify-content: space-between;
-    width: 100%;
 }
 
 .nav-left a,
