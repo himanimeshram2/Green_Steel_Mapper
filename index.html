@@ -15,14 +15,24 @@
 </head>
 <body>
     <header>
-        <img src="images/csiro_logo.png" alt="CSIRO Logo" class="logo">
-        <h1>Green Steel Economic Fairways Mapper</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#layers">Layers</a>
-            <a href="#location-search">Location Search</a>
-            <a href="#data-publications">Data & Publications</a>
-        </nav>
+        <div class="header-top">
+            <img src="images/csiro_logo.png" alt="CSIRO Logo" class="logo">
+            <h1>Green Steel Economic Fairways Mapper</h1>
+        </div>
+        <div class="header-bottom">
+            <nav class="nav-left">
+                <a href="#about"><img src="icons/about_icon.png" alt="About Icon"> About</a>
+                <a href="#layers"><img src="icons/layers_icon.png" alt="Layers Icon"> Layers</a>
+                <a href="#location-search"><img src="icons/search_icon.png" alt="Search Icon"> Location Search</a>
+                <a href="#data-publications"><img src="icons/data_icon.png" alt="Data Icon"> Data & Publications</a>
+            </nav>
+            <nav class="nav-right">
+                <a href="#tools"><img src="icons/tools_icon.png" alt="Tools Icon"> Tools</a>
+                <a href="#clip"><img src="icons/clip_icon.png" alt="Clip Icon"> Clip</a>
+                <a href="#map-narrator"><img src="icons/map_narrator_icon.png" alt="Map Narrator Icon"> Map Narrator</a>
+                <a href="#bookmarks"><img src="icons/bookmark_icon.png" alt="Bookmark Icon"> Bookmarks</a>
+            </nav>
+        </div>
     </header>
     <div id="map-container">
         <div id="map"></div>
@@ -57,27 +67,27 @@
                 <div class="form-group">
                     <label for="renewable-plant-capex" class="fancy-label">Renewable Plant CAPEX</label>
                     <div class="slider-group">
-                        <label class="slider-label">Photovoltaic CAPEX (₹/kW): <span id="pv-capex-value">3000</span></label>
-                        <input type="range" id="pv-capex" class="fancy-slider" min="0" max="10000" step="10" value="3000" oninput="updateSliderValue('pv-capex-value', this.value)">
+                        <label class="slider-label">Photovoltaic CAPEX (₹/kW): <span id="pv-capex-value"></span></label>
+                        <input type="range" id="pv-capex" class="fancy-slider" min="0" max="10000" step="10" value="3000">
                     </div>
                     <div class="slider-group">
-                        <label class="slider-label">Wind CAPEX (₹/kW): <span id="wind-capex-value">9730</span></label>
-                        <input type="range" id="wind-capex" class="fancy-slider" min="0" max="10000" step="10" value="9730" oninput="updateSliderValue('wind-capex-value', this.value)">
+                        <label class="slider-label">Wind CAPEX (₹/kW): <span id="wind-capex-value"></span></label>
+                        <input type="range" id="wind-capex" class="fancy-slider" min="0" max="10000" step="10" value="9730">
                     </div>
                     <div class="slider-group">
-                        <label class="slider-label">Hybrid CAPEX (₹/kW): <span id="hybrid-capex-value">5420</span></label>
-                        <input type="range" id="hybrid-capex" class="fancy-slider" min="0" max="10000" step="10" value="5420" oninput="updateSliderValue('hybrid-capex-value', this.value)">
+                        <label class="slider-label">Hybrid CAPEX (₹/kW): <span id="hybrid-capex-value"></span></label>
+                        <input type="range" id="hybrid-capex" class="fancy-slider" min="0" max="10000" step="10" value="5420">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="economics" class="fancy-label">Economics</label>
                     <div class="slider-group">
-                        <label class="slider-label">Iron Ore Price (₹/tonne): <span id="iron-ore-price-value">1500</span></label>
-                        <input type="range" id="iron-ore-price" class="fancy-slider" min="0" max="10000" step="10" value="1500" oninput="updateSliderValue('iron-ore-price-value', this.value)">
+                        <label class="slider-label">Iron Ore Price (₹/tonne): <span id="iron-ore-price-value"></span></label>
+                        <input type="range" id="iron-ore-price" class="fancy-slider" min="0" max="10000" step="10" value="1500">
                     </div>
                     <div class="slider-group">
-                        <label class="slider-label">Discount Rate (%): <span id="discount-rate-value">5</span></label>
-                        <input type="range" id="discount-rate" class="fancy-slider" min="0" max="30" step="0.1" value="5" oninput="updateSliderValue('discount-rate-value', this.value)">
+                        <label class="slider-label">Discount Rate (%): <span id="discount-rate-value"></span></label>
+                        <input type="range" id="discount-rate" class="fancy-slider" min="0" max="30" step="0.1" value="5">
                     </div>
                 </div>
                 <div class="form-group">
@@ -110,16 +120,6 @@
             </div>
         </div>
     </div>
-    <script>
-        function togglePanel() {
-            var sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('collapsed');
-        }
-
-        function updateSliderValue(id, value) {
-            document.getElementById(id).innerText = value;
-        }
-    </script>
     <script src="script.js"></script>
 </body>
 </html>

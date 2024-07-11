@@ -7,7 +7,7 @@ body {
 
 #map-container {
     display: flex;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 120px); /* Adjust height to accommodate the header */
 }
 
 #map, #cesiumContainer { 
@@ -190,49 +190,46 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: white;
+    background-color: #fff;
+    color: #333;
     padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-top {
     display: flex;
     align-items: center;
 }
 
-header .logo {
-    width: 100px; /* Adjusted width */
-    height: auto; /* Maintain aspect ratio */
+.header-top .logo {
+    width: 80px;
+    height: auto;
     margin-right: 20px;
 }
 
-header h1 {
-    font-size: 1.5rem; /* Adjusted size */
+.header-top h1 {
     margin: 0;
+    font-size: 1.5rem;
     flex-grow: 1;
 }
 
-header nav a {
+.header-bottom {
+    background-color: #3498db;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.header-bottom nav a {
     color: white;
     margin: 0 1rem;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
-.fancy-heading {
-    font-family: 'Georgia', serif;
-    font-size: 24px;
-    font-weight: bold;
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-
-.fancy-subheading {
-    font-family: 'Georgia', serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: #34495e;
-    margin-bottom: 10px;
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.header-bottom nav img {
+    margin-right: 0.5rem;
+    width: 20px;
+    height: auto;
 }
