@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const drawControl = new L.Control.Draw({
         draw: {
             polygon: true,
-            polyline: true,
+            polyline: false,
             rectangle: true,
-            circle: true,
+            circle: false,
             marker: true,
-            circlemarker: true,
+            circlemarker: false,
         },
         edit: {
             featureGroup: drawnItems
@@ -210,18 +210,18 @@ document.addEventListener('DOMContentLoaded', function() {
     Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0N2NkOWMyZS0wNGI5LTQ3ZjQtYWNmMy0wOGY2MDNhMGU3MzAiLCJpZCI6MjI2Nzk4LCJpYXQiOjE3MjAyNzUxNDF9.qOUx_uvZXt1hoTmnrPHerfr1thbJF0nWZb9EZBfRnqc';
     var viewer = new Cesium.Viewer('cesiumContainer', {
         terrainProvider: Cesium.createWorldTerrain(),
-        animation: true,
-        baseLayerPicker: true,
-        fullscreenButton: true,
-        vrButton: true,
-        timeline: true,
-        homeButton: true,
-        sceneModePicker: true,
-        geocoder: true,
-        navigationHelpButton: true,
-        infoBox: true,
-        selectionIndicator: true,
-        navigationInstructionsInitiallyVisible: true
+        animation: false,
+        baseLayerPicker: false,
+        fullscreenButton: false,
+        vrButton: false,
+        timeline: false,
+        homeButton: false,
+        sceneModePicker: false,
+        geocoder: false,
+        navigationHelpButton: false,
+        infoBox: false,
+        selectionIndicator: false,
+        navigationInstructionsInitiallyVisible: false
     });
 
     window.switchTo2D = function() {

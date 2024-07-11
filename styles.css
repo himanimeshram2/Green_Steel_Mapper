@@ -4,6 +4,7 @@ body {
     font-family: 'Arial', sans-serif; 
     background-color: #f0f2f5; 
 }
+
 #map { 
     position: absolute; 
     top: 0; 
@@ -11,6 +12,7 @@ body {
     width: 75%; 
     height: 100%; 
 }
+
 #side-panel {
     position: absolute;
     top: 0;
@@ -23,6 +25,7 @@ body {
     padding: 20px;
     box-sizing: border-box;
 }
+
 .fancy-title {
     font-family: 'Georgia', serif;
     font-size: 26px;
@@ -33,6 +36,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
+
 .fancy-label {
     font-family: 'Georgia', serif;
     font-size: 18px;
@@ -43,9 +47,11 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
 .form-group { 
     margin-bottom: 20px; 
 }
+
 .fancy-input, .fancy-select { 
     width: 100%; 
     padding: 10px; 
@@ -57,27 +63,33 @@ body {
     font-size: 14px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 .fancy-input:focus, .fancy-select:focus {
     border-color: #3498db;
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
+
 .radio-buttons {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
 }
+
 .radio-label {
     font-size: 14px;
     color: #34495e;
     margin-right: 10px;
     cursor: pointer;
 }
+
 .radio-label input {
     margin-right: 5px;
 }
+
 .slider-group {
     margin-bottom: 20px;
 }
+
 .slider-label {
     font-family: 'Georgia', serif;
     font-size: 16px;
@@ -86,13 +98,16 @@ body {
     display: block;
     margin-bottom: 5px;
 }
+
 .fancy-slider {
     width: 100%;
 }
+
 .btn-group { 
     margin-top: 20px; 
     text-align: center; 
 }
+
 .fancy-button { 
     padding: 10px 20px; 
     margin-right: 10px; 
@@ -105,44 +120,47 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease;
     text-transform: uppercase;
 }
+
 .fancy-button.clear { 
     background-color: #e74c3c; 
     color: white; 
 }
+
 .fancy-button.clear:hover { 
     background-color: #c0392b; 
     transform: translateY(-2px);
 }
+
 .fancy-button.run { 
     background-color: #2ecc71; 
     color: white; 
 }
+
 .fancy-button.run:hover { 
     background-color: #27ae60; 
     transform: translateY(-2px);
 }
+
 .fancy-button.menu { 
     background-color: #3498db; 
     color: white; 
 }
+
 .fancy-button.menu:hover { 
     background-color: #2980b9; 
     transform: translateY(-2px);
 }
+
 .fancy-button {
     margin-bottom: 10px; /* Add this line */
 }
+
 .tab-content { 
     display: none; 
 }
+
 .tab-content.active { 
     display: block; 
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
 header {
