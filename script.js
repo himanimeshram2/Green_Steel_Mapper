@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Show/Hide manual coordinate input based on selected option
-    document.querySelectorAll('input[name="options"]').forEach((radio) => {
+    document.querySelectorAll('input[name="method"]').forEach((radio) => {
         radio.addEventListener('change', function() {
             const manualCoordinates = document.getElementById('manual-coordinates');
             if (document.getElementById('option-manual').checked) {
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.btn.menu').addEventListener('click', () => {
         window.location.href = '/';
     });
-    
+
     function showTabContent(event) {
         const selectedValue = event.target.value;
         document.querySelectorAll('.tab-content').forEach(tab => {
@@ -205,36 +205,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('select-point').addEventListener('click', function() {
         alert('Select Point functionality will be implemented here.');
     });
-
-    // Initialize Cesium viewer with token
-    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0N2NkOWMyZS0wNGI5LTQ3ZjQtYWNmMy0wOGY2MDNhMGU3MzAiLCJpZCI6MjI2Nzk4LCJpYXQiOjE3MjAyNzUxNDF9.qOUx_uvZXt1hoTmnrPHerfr1thbJF0nWZb9EZBfRnqc';
-    var viewer = new Cesium.Viewer('cesiumContainer', {
-        terrainProvider: Cesium.createWorldTerrain(),
-        animation: false,
-        baseLayerPicker: false,
-        fullscreenButton: false,
-        vrButton: false,
-        timeline: false,
-        homeButton: false,
-        sceneModePicker: false,
-        geocoder: false,
-        navigationHelpButton: false,
-        infoBox: false,
-        selectionIndicator: false,
-        navigationInstructionsInitiallyVisible: false
-    });
-
-    window.switchTo2D = function() {
-        document.getElementById('map').classList.remove('hidden');
-        document.getElementById('cesiumContainer').classList.add('hidden');
-    };
-
-    window.switchTo3D = function() {
-        document.getElementById('map').classList.add('hidden');
-        document.getElementById('cesiumContainer').classList.remove('hidden');
-        viewer.resize();
-        viewer.scene.requestRender();
-    };
 });
 
 function togglePanel() {
