@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harit ispat Manchitrak</title>
+    <title>Green Steel Economic Fairways Mapper</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cesium/1.84/Widgets/widgets.css" />
@@ -12,26 +12,25 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
     <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 <body>
     <header>
         <div class="header-top">
             <img src="images/csiro_logo.png" alt="CSIRO Logo" class="logo">
-            <h1>Green Steel Mapper</h1>
+            <h1>Green Steel Economic Fairways Mapper</h1>
         </div>
         <div class="header-bottom">
             <nav>
-                <a href="#about"><i class="fas fa-info-circle"></i> About</a>
-                <a href="#layers"><i class="fas fa-layer-group"></i> Layers</a>
-                <a href="#location-search"><i class="fas fa-search-location"></i> Location Search</a>
-                <a href="#data-publications"><i class="fas fa-book"></i> Data & Publications</a>
+                <a href="#about"><i class="fa fa-info-circle"></i> About</a>
+                <a href="#layers"><i class="fa fa-layer-group"></i> Layers</a>
+                <a href="#location-search"><i class="fa fa-search-location"></i> Location Search</a>
+                <a href="#data-publications"><i class="fa fa-database"></i> Data & Publications</a>
             </nav>
             <nav>
-                <a href="#tools"><i class="fas fa-tools"></i> Tools</a>
-                <a href="#clip"><i class="fas fa-clipboard"></i> Clip</a>
-                <a href="#map-narrator"><i class="fas fa-volume-up"></i> Map Narrator</a>
-                <a href="#bookmarks"><i class="fas fa-bookmark"></i> Bookmarks</a>
+                <a href="#tools"><i class="fa fa-tools"></i> Tools</a>
+                <a href="#clip"><i class="fa fa-paperclip"></i> Clip</a>
+                <a href="#map-narrator"><i class="fa fa-volume-up"></i> Map Narrator</a>
+                <a href="#bookmarks"><i class="fa fa-bookmark"></i> Bookmarks</a>
             </nav>
         </div>
     </header>
@@ -65,29 +64,29 @@
                     <input type="text" id="manual-lon" placeholder="Longitude">
                     <button id="add-manual-marker" class="btn fancy-button">Add Marker</button>
                 </div>
-                <h3 class="fancy-subheading">RENEWABLE PLANT CAPEX</h3>
                 <div class="form-group">
+                    <label for="renewable-plant-capex" class="fancy-label">Renewable Plant CAPEX</label>
                     <div class="slider-group">
-                        <label class="slider-label">Photovoltaic CAPEX (₹/kW): <span id="pv-capex-value"></span></label>
+                        <label class="slider-label">Photovoltaic CAPEX (₹/kW): <span id="pv-capex-value">3000</span></label>
                         <input type="range" id="pv-capex" class="fancy-slider" min="0" max="10000" step="10" value="3000">
                     </div>
                     <div class="slider-group">
-                        <label class="slider-label">Wind CAPEX (₹/kW): <span id="wind-capex-value"></span></label>
+                        <label class="slider-label">Wind CAPEX (₹/kW): <span id="wind-capex-value">9730</span></label>
                         <input type="range" id="wind-capex" class="fancy-slider" min="0" max="10000" step="10" value="9730">
                     </div>
                     <div class="slider-group">
-                        <label class="slider-label">Hybrid CAPEX (₹/kW): <span id="hybrid-capex-value"></span></label>
+                        <label class="slider-label">Hybrid CAPEX (₹/kW): <span id="hybrid-capex-value">5420</span></label>
                         <input type="range" id="hybrid-capex" class="fancy-slider" min="0" max="10000" step="10" value="5420">
                     </div>
                 </div>
-                <h3 class="fancy-subheading">ECONOMICS</h3>
                 <div class="form-group">
+                    <label for="economics" class="fancy-label">Economics</label>
                     <div class="slider-group">
-                        <label class="slider-label">Iron Ore Price (₹/tonne): <span id="iron-ore-price-value"></span></label>
+                        <label class="slider-label">Iron Ore Price (₹/tonne): <span id="iron-ore-price-value">1500</span></label>
                         <input type="range" id="iron-ore-price" class="fancy-slider" min="0" max="10000" step="10" value="1500">
                     </div>
                     <div class="slider-group">
-                        <label class="slider-label">Discount Rate (%): <span id="discount-rate-value"></span></label>
+                        <label class="slider-label">Discount Rate (%): <span id="discount-rate-value">5</span></label>
                         <input type="range" id="discount-rate" class="fancy-slider" min="0" max="30" step="0.1" value="5">
                     </div>
                 </div>
