@@ -196,6 +196,7 @@ header nav a {
 
 #map, #cesiumContainer {
     flex-grow: 1;
+    height: 100%;
 }
 
 .hidden {
