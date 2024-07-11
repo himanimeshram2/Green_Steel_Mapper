@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cesium/1.84/Widgets/widgets.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cesium/1.84/Cesium.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
@@ -15,22 +16,24 @@
 </head>
 <body>
     <header>
-        <img src="images/csiro_logo.png" alt="CSIRO Logo" class="logo">
-        <h1>Harit Ispat Manchitrak</h1>
-        <nav>
-            <div class="nav-left">
+        <div class="header-top">
+            <img src="images/csiro_logo.png" alt="CSIRO Logo" class="logo">
+            <h1>Harit Ispat Manchitrak</h1>
+        </div>
+        <div class="header-bottom">
+            <nav class="nav-left">
                 <a href="#about"><i class="fas fa-info-circle"></i> About</a>
                 <a href="#layers"><i class="fas fa-layer-group"></i> Layers</a>
                 <a href="#location-search"><i class="fas fa-search-location"></i> Location Search</a>
-                <a href="#data-publications"><i class="fas fa-book"></i> Data & Publications</a>
-            </div>
-            <div class="nav-right">
+                <a href="#data-publications"><i class="fas fa-database"></i> Data & Publications</a>
+            </nav>
+            <nav class="nav-right">
                 <a href="#tools"><i class="fas fa-tools"></i> Tools</a>
-                <a href="#clip"><i class="fas fa-paperclip"></i> Clip</a>
-                <a href="#map-narrator"><i class="fas fa-map"></i> Map Narrator</a>
+                <a href="#clip"><i class="fas fa-cut"></i> Clip</a>
+                <a href="#map-narrator"><i class="fas fa-comment-dots"></i> Map Narrator</a>
                 <a href="#bookmarks"><i class="fas fa-bookmark"></i> Bookmarks</a>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
     <div id="map-container">
         <div id="map"></div>
@@ -94,11 +97,29 @@
                     <button class="btn fancy-button clear">Clear</button>
                     <button class="btn fancy-button run">Run Assessment</button>
                     <button class="btn fancy-button menu">Back to Menu</button>
+                    <button id="toggle-3d" class="btn fancy-button">Toggle 3D</button>
+                </div>
+                <button id="select-point">Select Point</button>
+                <div class="analysis">
+                    <label for="analysis">Analysis</label>
+                    <select id="analysis">
+                        <option value="optimised">Optimised</option>
+                    </select>
+                </div>
+                <div class="product">
+                    <label for="product">Product</label>
+                    <select id="product">
+                        <option value="liquid-steel">Liquid Steel</option>
+                    </select>
+                </div>
+                <div class="slider">
+                    <label for="plant-life">Plant Life (Years)</label>
+                    <input type="range" id="plant-life" name="plant-life" min="0" max="25">
                 </div>
             </div>
         </div>
+        <button id="toggle-3d-map" class="map-toggle"><i class="fas fa-globe"></i> 3D</button>
     </div>
-    <button id="toggle-3d-map" class="map-toggle"><i class="fas fa-globe"></i> 3D</button>
     <script src="script.js"></script>
 </body>
 </html>
