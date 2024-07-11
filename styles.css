@@ -7,7 +7,7 @@ body {
 
 #map-container {
     display: flex;
-    height: calc(100vh - 200px); /* Adjusted height to account for headers */
+    height: calc(100vh - 160px); /* Adjusted height to account for both headers */
     position: relative;
 }
 
