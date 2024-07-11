@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const drawControl = new L.Control.Draw({
         draw: {
             polygon: true,
-            polyline: false,
+            polyline: true,
             rectangle: true,
-            circle: false,
+            circle: true,
             marker: true,
-            circlemarker: false,
+            circlemarker: true,
         },
         edit: {
             featureGroup: drawnItems
