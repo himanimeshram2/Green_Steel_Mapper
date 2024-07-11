@@ -9,13 +9,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to switch to 2D map
     window.switchTo2D = function() {
-        // Add logic to switch to 2D view
         map.setView([20.5937, 78.9629], 5);
     };
 
     // Function to switch to 3D map
     window.switchTo3D = function() {
-        // Add logic to switch to 3D view
         alert("3D map view is not yet implemented.");
     };
 
