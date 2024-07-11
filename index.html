@@ -26,7 +26,6 @@
     </header>
     <div id="map-container">
         <div id="map"></div>
-        <div id="cesiumContainer"></div>
         <div id="sidebar">
             <button id="toggle-button" onclick="togglePanel()">☰</button>
             <div id="sidebar-content">
@@ -55,8 +54,8 @@
                     <input type="text" id="manual-lon" placeholder="Longitude">
                     <button id="add-manual-marker" class="btn fancy-button">Add Marker</button>
                 </div>
-                <h3 class="fancy-subheading">RENEWABLE PLANT CAPEX</h3>
                 <div class="form-group">
+                    <label for="renewable-plant-capex" class="fancy-label">Renewable Plant CAPEX</label>
                     <div class="slider-group">
                         <label class="slider-label">Photovoltaic CAPEX (₹/kW): <span id="pv-capex-value"></span></label>
                         <input type="range" id="pv-capex" class="fancy-slider" min="0" max="10000" step="10" value="3000">
@@ -70,8 +69,8 @@
                         <input type="range" id="hybrid-capex" class="fancy-slider" min="0" max="10000" step="10" value="5420">
                     </div>
                 </div>
-                <h3 class="fancy-subheading">ECONOMICS</h3>
                 <div class="form-group">
+                    <label for="economics" class="fancy-label">Economics</label>
                     <div class="slider-group">
                         <label class="slider-label">Iron Ore Price (₹/tonne): <span id="iron-ore-price-value"></span></label>
                         <input type="range" id="iron-ore-price" class="fancy-slider" min="0" max="10000" step="10" value="1500">
@@ -89,6 +88,7 @@
                     <button class="btn fancy-button clear">Clear</button>
                     <button class="btn fancy-button run">Run Assessment</button>
                     <button class="btn fancy-button menu">Back to Menu</button>
+                    <button id="toggle-3d" class="btn fancy-button">Toggle 3D</button>
                 </div>
                 <button id="select-point">Select Point</button>
                 <div class="analysis">

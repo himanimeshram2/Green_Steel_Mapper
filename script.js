@@ -1,56 +1,42 @@
-// Initialize Leaflet map
-const map = L.map('map').setView([20.5937, 78.9629], 5);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+document.addEventListener("DOMContentLoaded", function() {
+    // Initialize the map
+    var map = L.map('map').setView([20.5937, 78.9629], 5); // Centered on India
 
-// Initialize Cesium Viewer
-const viewer = new Cesium.Viewer('cesiumContainer', {
-    imageryProvider: new Cesium.OpenStreetMapImageryProvider({
-        url : 'https://a.tile.openstreetmap.org/'
-    }),
-    baseLayerPicker: false,
-    geocoder: false,
-    homeButton: false,
-    sceneModePicker: false,
-    navigationHelpButton: false,
-    animation: false,
-    timeline: false,
-    fullscreenButton: false
-});
-viewer.scene.mode = Cesium.SceneMode.SCENE2D;
+    // Add OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
-function switchTo2D() {
-    viewer.scene.mode = Cesium.SceneMode.SCENE2D;
-    document.getElementById('cesiumContainer').style.display = 'block';
-    document.getElementById('map').style.display = 'none';
-}
+    // Function to switch to 2D map
+    window.switchTo2D = function() {
+        // Add logic to switch to 2D view
+        map.setView([20.5937, 78.9629], 5);
+    };
 
-function switchTo3D() {
-    viewer.scene.mode = Cesium.SceneMode.SCENE3D;
-    document.getElementById('cesiumContainer').style.display = 'block';
-    document.getElementById('map').style.display = 'none';
-}
+    // Function to switch to 3D map
+    window.switchTo3D = function() {
+        // Add logic to switch to 3D view
+        alert("3D map view is not yet implemented.");
+    };
 
-// Slider event listeners to display values
-document.getElementById('pv-capex').addEventListener('input', function() {
-    document.getElementById('pv-capex-value').innerText = this.value;
-});
-document.getElementById('wind-capex').addEventListener('input', function() {
-    document.getElementById('wind-capex-value').innerText = this.value;
-});
-document.getElementById('hybrid-capex').addEventListener('input', function() {
-    document.getElementById('hybrid-capex-value').innerText = this.value;
-});
-document.getElementById('iron-ore-price').addEventListener('input', function() {
-    document.getElementById('iron-ore-price-value').innerText = this.value;
-});
-document.getElementById('discount-rate').addEventListener('input', function() {
-    document.getElementById('discount-rate-value').innerText = this.value;
-});
+    // Slider functionality
+    document.getElementById("pv-capex").addEventListener("input", function() {
+        document.getElementById("pv-capex-value").textContent = this.value;
+    });
 
-// Toggle sidebar visibility
-function togglePanel() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('collapsed');
-}
+    document.getElementById("wind-capex").addEventListener("input", function() {
+        document.getElementById("wind-capex-value").textContent = this.value;
+    });
+
+    document.getElementById("hybrid-capex").addEventListener("input", function() {
+        document.getElementById("hybrid-capex-value").textContent = this.value;
+    });
+
+    document.getElementById("iron-ore-price").addEventListener("input", function() {
+        document.getElementById("iron-ore-price-value").textContent = this.value;
+    });
+
+    document.getElementById("discount-rate").addEventListener("input", function() {
+        document.getElementById("discount-rate-value").textContent = this.value;
+    });
+});
