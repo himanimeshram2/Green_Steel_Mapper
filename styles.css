@@ -52,26 +52,58 @@ body {
     z-index: 1000;
 }
 
-.fancy-heading {
+.header-top {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+.logo {
+    width: 100px; /* Adjusted width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3498db;
+    padding: 0.5rem 1rem;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+}
+
+.nav-left a, .nav-right a {
+    color: white;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-left a i, .nav-right a i {
+    margin-right: 0.3rem;
+}
+
+.fancy-title {
     font-family: 'Georgia', serif;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
     color: #2c3e50;
     text-align: center;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-}
-
-.fancy-subheading {
-    font-family: 'Georgia', serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: #34495e;
-    margin-bottom: 10px;
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .fancy-label {
@@ -198,63 +230,4 @@ body {
 
 .tab-content.active { 
     display: block; 
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.header-top {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.header-bottom {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    background-color: #3498db;
-    padding: 10px 0;
-}
-
-header .logo {
-    width: 100px; /* Adjusted width */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 20px;
-}
-
-header h1 {
-    margin: 0;
-    flex-grow: 1;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-header nav {
-    display: flex;
-    align-items: center;
-}
-
-header nav a {
-    color: white;
-    margin: 0 1rem;
-    text-decoration: none;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-}
-
-header nav a i {
-    margin-right: 5px;
-}
-
-header nav a:hover {
-    text-decoration: underline;
 }
