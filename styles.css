@@ -16,7 +16,7 @@ body {
 }
 
 #sidebar {
-    width: 450px; /* Adjusted width */
+    width: 400px; /* Adjusted width */
     background-color: #fff;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     overflow-y: auto;
@@ -172,7 +172,7 @@ body {
     color: white; 
 }
 
-.fancy-button.menu:hover { 
+fancy-button.menu:hover { 
     background-color: #2980b9; 
     transform: translateY(-2px);
 }
@@ -204,6 +204,7 @@ header .logo {
 }
 
 header h1 {
+    font-size: 1.5rem; /* Adjusted size */
     margin: 0;
     flex-grow: 1;
 }
