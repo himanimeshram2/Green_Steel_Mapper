@@ -8,7 +8,6 @@ body {
 #map-container {
     display: flex;
     height: calc(100vh - 60px);
-    position: relative;
 }
 
 #map, #cesiumContainer { 
@@ -215,7 +214,6 @@ header {
     padding: 1rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 header .logo {
@@ -226,29 +224,47 @@ header .logo {
 
 header h1 {
     margin: 0;
-    font-size: 1.5rem;
+    flex-grow: 1;
 }
 
-.header-bottom {
+header nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #3498db;
-    padding: 0.5rem 1rem;
+    width: 100%;
 }
 
 .nav-left, .nav-right {
     display: flex;
 }
 
-.nav-left a, .nav-right a {
+header nav a {
     color: white;
-    margin: 0 0.5rem;
+    margin: 0 1rem;
     text-decoration: none;
-    display: flex;
-    align-items: center;
 }
 
-.nav-left a i, .nav-right a i {
+header nav a i {
     margin-right: 0.3rem;
+}
+
+.fancy-heading {
+    font-family: 'Georgia', serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.fancy-subheading {
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 10px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
