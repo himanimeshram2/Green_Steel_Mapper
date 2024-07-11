@@ -48,15 +48,15 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("discount-rate").addEventListener("input", function() {
         document.getElementById("discount-rate-value").textContent = this.value;
     });
-    
+
     // Toggle sidebar functionality
     window.togglePanel = function() {
         var sidebar = document.getElementById("sidebar");
         sidebar.classList.toggle("collapsed");
+    };
 
     // Function to update slider value display
     function updateSliderValue(id, value) {
         document.getElementById(id).textContent = value;
-    
-    };
+    }
 });
