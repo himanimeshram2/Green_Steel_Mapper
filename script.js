@@ -35,13 +35,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     window.switchTo2D = function() {
-        document.getElementById('map').style.display = 'block';
-        document.getElementById('cesiumContainer').style.display = 'none';
+        document.getElementById('map').classList.remove('hidden');
+        document.getElementById('cesiumContainer').classList.add('hidden');
     };
 
     window.switchTo3D = function() {
-        document.getElementById('map').style.display = 'none';
-        document.getElementById('cesiumContainer').style.display = 'block';
+        document.getElementById('map').classList.add('hidden');
+        document.getElementById('cesiumContainer').classList.remove('hidden');
         viewer.resize();
         viewer.scene.requestRender();
     };
