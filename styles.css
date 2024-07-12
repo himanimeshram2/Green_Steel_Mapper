@@ -7,7 +7,7 @@ body {
 
 #map-container {
     display: flex;
-    height: calc(100vh - 120px); /* Adjusted height */
+    height: calc(100vh - 100px); /* Adjust height to account for headers */
 }
 
 #map, #cesiumContainer { 
@@ -16,7 +16,7 @@ body {
 }
 
 #sidebar {
-    width: 400px; /* Adjusted width */
+    width: 400px; 
     background-color: #fff;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     overflow-y: auto;
@@ -33,7 +33,7 @@ body {
 }
 
 #sidebar-content {
-    margin-top: 40px; /* Adjusted to account for the toggle button */
+    margin-top: 40px;
 }
 
 #sidebar.collapsed #sidebar-content {
@@ -48,7 +48,7 @@ body {
     cursor: pointer;
     position: absolute;
     top: 10px;
-    right: 10px; /* Adjusted position */
+    right: 10px;
     z-index: 1000;
 }
 
@@ -178,7 +178,7 @@ body {
 }
 
 .fancy-button {
-    margin-bottom: 10px; /* Add this line */
+    margin-bottom: 10px; 
 }
 
 .tab-content { 
@@ -192,40 +192,48 @@ body {
 header {
     background-color: #333;
     color: white;
-    padding: 0.5rem; /* Adjusted padding */
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-container {
     display: flex;
     align-items: center;
 }
 
-header .logo {
-    width: 50px; /* Adjusted width */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Adjusted margin */
+.logo {
+    height: 50px;
+    margin-right: 10px;
 }
 
 header h1 {
     margin: 0;
     flex-grow: 1;
-    font-size: 1.5rem; /* Adjusted font size */
+    text-align: center;
 }
 
 .nav-tools {
-    background-color: #2980b9;
-    color: white;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1rem; /* Adjusted padding */
+    justify-content: center;
+    background-color: #0073e6;
+    padding: 10px;
+    box-shadow: 0 4px 2px -2px gray;
 }
 
 .nav-tools a {
     color: white;
     margin: 0 1rem;
     text-decoration: none;
-    display: inline-flex;
+    display: flex;
     align-items: center;
 }
 
 .nav-tools a i {
     margin-right: 5px;
+}
+
+.nav-tools a:hover {
+    text-decoration: underline;
 }
