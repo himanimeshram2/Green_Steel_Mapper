@@ -41,10 +41,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Toggle sidebar
     window.togglePanel = function() {
         var sidebar = document.getElementById("sidebar");
-        if (sidebar.style.display === "none") {
-            sidebar.style.display = "flex";
-        } else {
-            sidebar.style.display = "none";
-        }
+        sidebar.classList.toggle("collapsed");
     };
 });
