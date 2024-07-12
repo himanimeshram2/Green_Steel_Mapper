@@ -38,9 +38,13 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("discount-rate-value").textContent = this.value;
     });
 
-    // Toggle button functionality for the sidebar
+    // Toggle sidebar
     window.togglePanel = function() {
         var sidebar = document.getElementById("sidebar");
-        sidebar.classList.toggle("collapsed");
+        if (sidebar.style.display === "none") {
+            sidebar.style.display = "flex";
+        } else {
+            sidebar.style.display = "none";
+        }
     };
 });

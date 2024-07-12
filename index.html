@@ -20,7 +20,7 @@
             <img src="images/csiro_logo.png" alt="CSIRO Logo" class="logo">
             <img src="images/geoscience_australia_logo.png" alt="Geoscience Australia Logo" class="logo">
             <img src="images/monash_logo.png" alt="Monash Logo" class="logo">
-            <img src="images/iitb_logo.png" alt="IITB Logo" class="logo">
+            <img src="images/iitb_logo.jpeg" alt="IITB Logo" class="logo">
             <img src="images/iitb_monash_logo.png" alt="IITB Monash Logo" class="logo">
         </div>
         <h1>Harit Ispat Manchitrak</h1>
@@ -41,8 +41,6 @@
             <button id="toggle-button" onclick="togglePanel()">☰</button>
             <div id="sidebar-content">
                 <h2>Economic Fairways Mapper</h2>
-                <button onclick="switchTo2D()">2D Map</button>
-                <button onclick="switchTo3D()">3D Map</button>
                 <div class="option">
                     <label>
                         <input type="radio" name="selection" checked> Point
@@ -99,7 +97,7 @@
                     <button class="btn fancy-button clear">Clear</button>
                     <button class="btn fancy-button run">Run Assessment</button>
                     <button class="btn fancy-button menu">Back to Menu</button>
-                    <button id="toggle-3d" class="btn fancy-button">Toggle 3D</button>
+                    <button id="toggle-3d" class="btn fancy-button" onclick="switchTo3D()">Toggle 3D</button>
                 </div>
                 <button id="select-point">Select Point</button>
                 <div class="analysis">
