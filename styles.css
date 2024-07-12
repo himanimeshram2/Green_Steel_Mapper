@@ -19,8 +19,15 @@ header .logo-container {
 }
 
 header .logo {
-    height: 50px;
     margin-right: 20px;
+}
+
+.csiro-logo, .iitb-logo {
+    height: 50px;
+}
+
+.ga-logo, .monash-logo, .iitb-monash-logo {
+    height: 40px;
 }
 
 header h1 {
@@ -49,10 +56,10 @@ header h1 {
 
 #map-container {
     display: flex;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 140px);
 }
 
-#map, #cesiumContainer { 
+#map {
     flex: 1;
 }
 
