@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cesium/1.84/Widgets/widgets.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cesium/1.84/Cesium.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
@@ -26,10 +27,10 @@
         <a href="#about"><i class="fas fa-info-circle"></i> About</a>
         <a href="#layers"><i class="fas fa-layer-group"></i> Layers</a>
         <a href="#location-search"><i class="fas fa-search-location"></i> Location Search</a>
-        <a href="#data-publications"><i class="fas fa-book"></i> Data & Publications</a>
+        <a href="#data-publications"><i class="fas fa-database"></i> Data & Publications</a>
         <a href="#tools"><i class="fas fa-tools"></i> Tools</a>
-        <a href="#clip"><i class="fas fa-paperclip"></i> Clip</a>
-        <a href="#map-narrator"><i class="fas fa-microphone"></i> Map Narrator</a>
+        <a href="#clip"><i class="fas fa-clipboard"></i> Clip</a>
+        <a href="#map-narrator"><i class="fas fa-map"></i> Map Narrator</a>
         <a href="#bookmarks"><i class="fas fa-bookmark"></i> Bookmarks</a>
     </nav>
     <div id="map-container">
@@ -38,25 +39,55 @@
             <button id="toggle-button" onclick="togglePanel()">☰</button>
             <div id="sidebar-content">
                 <h2>Economic Fairways Mapper</h2>
-                <div class="form-group">
-                    <label for="pv-capex" class="fancy-label">Photovoltaic CAPEX (₹/kW): <span id="pv-capex-value"></span></label>
-                    <input type="range" id="pv-capex" class="fancy-slider" min="0" max="10000" step="10" value="3000">
+                <button onclick="switchTo2D()">2D Map</button>
+                <button onclick="switchTo3D()">3D Map</button>
+                <div class="option">
+                    <label>
+                        <input type="radio" name="selection" checked> Point
+                    </label>
+                    <label>
+                        <input type="radio" name="selection"> Area
+                    </label>
+                </div>
+                <div class="selection">
+                    <label>
+                        <input type="radio" name="method" checked> Select Point
+                    </label>
+                    <label>
+                        <input type="radio" name="method" id="option-manual"> Manual
+                    </label>
+                </div>
+                <div class="form-group" id="manual-coordinates" style="display: none;">
+                    <label for="manual-point" class="fancy-label">Enter Coordinates (WGS 84, EPSG:4326)</label>
+                    <input type="text" id="manual-lat" placeholder="Latitude">
+                    <input type="text" id="manual-lon" placeholder="Longitude">
+                    <button id="add-manual-marker" class="btn fancy-button">Add Marker</button>
                 </div>
                 <div class="form-group">
-                    <label for="wind-capex" class="fancy-label">Wind CAPEX (₹/kW): <span id="wind-capex-value"></span></label>
-                    <input type="range" id="wind-capex" class="fancy-slider" min="0" max="10000" step="10" value="9730">
+                    <label for="renewable-plant-capex" class="fancy-label">Renewable Plant CAPEX</label>
+                    <div class="slider-group">
+                        <label class="slider-label">Photovoltaic CAPEX (₹/kW): <span id="pv-capex-value"></span></label>
+                        <input type="range" id="pv-capex" class="fancy-slider" min="0" max="10000" step="10" value="3000">
+                    </div>
+                    <div class="slider-group">
+                        <label class="slider-label">Wind CAPEX (₹/kW): <span id="wind-capex-value"></span></label>
+                        <input type="range" id="wind-capex" class="fancy-slider" min="0" max="10000" step="10" value="9730">
+                    </div>
+                    <div class="slider-group">
+                        <label class="slider-label">Hybrid CAPEX (₹/kW): <span id="hybrid-capex-value"></span></label>
+                        <input type="range" id="hybrid-capex" class="fancy-slider" min="0" max="10000" step="10" value="5420">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="hybrid-capex" class="fancy-label">Hybrid CAPEX (₹/kW): <span id="hybrid-capex-value"></span></label>
-                    <input type="range" id="hybrid-capex" class="fancy-slider" min="0" max="10000" step="10" value="5420">
-                </div>
-                <div class="form-group">
-                    <label for="iron-ore-price" class="fancy-label">Iron Ore Price (₹/tonne): <span id="iron-ore-price-value"></span></label>
-                    <input type="range" id="iron-ore-price" class="fancy-slider" min="0" max="10000" step="10" value="1500">
-                </div>
-                <div class="form-group">
-                    <label for="discount-rate" class="fancy-label">Discount Rate (%): <span id="discount-rate-value"></span></label>
-                    <input type="range" id="discount-rate" class="fancy-slider" min="0" max="30" step="0.1" value="5">
+                    <label for="economics" class="fancy-label">Economics</label>
+                    <div class="slider-group">
+                        <label class="slider-label">Iron Ore Price (₹/tonne): <span id="iron-ore-price-value"></span></label>
+                        <input type="range" id="iron-ore-price" class="fancy-slider" min="0" max="10000" step="10" value="1500">
+                    </div>
+                    <div class="slider-group">
+                        <label class="slider-label">Discount Rate (%): <span id="discount-rate-value"></span></label>
+                        <input type="range" id="discount-rate" class="fancy-slider" min="0" max="30" step="0.1" value="5">
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="email" class="fancy-label">Enter your email address</label>
@@ -65,11 +96,29 @@
                 <div class="btn-group">
                     <button class="btn fancy-button clear">Clear</button>
                     <button class="btn fancy-button run">Run Assessment</button>
+                    <button class="btn fancy-button menu">Back to Menu</button>
+                    <button id="toggle-3d" class="btn fancy-button">Toggle 3D</button>
+                </div>
+                <button id="select-point">Select Point</button>
+                <div class="analysis">
+                    <label for="analysis">Analysis</label>
+                    <select id="analysis">
+                        <option value="optimised">Optimised</option>
+                    </select>
+                </div>
+                <div class="product">
+                    <label for="product">Product</label>
+                    <select id="product">
+                        <option value="liquid-steel">Liquid Steel</option>
+                    </select>
+                </div>
+                <div class="slider">
+                    <label for="plant-life">Plant Life (Years)</label>
+                    <input type="range" id="plant-life" name="plant-life" min="0" max="25">
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>
