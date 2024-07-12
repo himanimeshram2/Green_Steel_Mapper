@@ -1,53 +1,47 @@
-body { 
-    margin: 0; 
-    padding: 0; 
-    font-family: 'Arial', sans-serif; 
-    background-color: #f0f2f5; 
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
 header {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    justify-content: space-between;
+    padding: 10px;
     background-color: #333;
     color: white;
 }
 
-header .logo-container {
+.logo-container {
     display: flex;
     align-items: center;
 }
 
-header .logo {
-    margin-right: 20px;
-}
-
-.csiro-logo, .iitb-logo {
+.logo {
     height: 50px;
+    margin-right: 10px;
 }
 
-.ga-logo, .monash-logo, .iitb-monash-logo {
-    height: 40px;
-}
-
-header h1 {
+h1 {
+    font-size: 1.5rem;
     margin: 0;
-    font-size: 24px;
 }
 
 .nav-tools {
-    display: flex;
-    justify-content: center;
     background-color: #0066cc;
-    padding: 10px 0;
-    margin-bottom: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    font-size: 1rem;
 }
 
 .nav-tools a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 16px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-tools a i {
@@ -68,34 +62,59 @@ header h1 {
     background-color: #fff;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
+    transition: all 0.3s;
+}
+
+#toggle-button {
+    display: none;
 }
 
 #sidebar-content {
     padding: 20px;
 }
 
-#toggle-button {
-    background-color: #0066cc;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.option, .selection {
-    margin-bottom: 15px;
+#sidebar h2 {
+    margin-top: 0;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .fancy-label {
     font-weight: bold;
-    margin-bottom: 5px;
+}
+
+.fancy-slider {
+    width: 100%;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fancy-button {
+    padding: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.clear {
+    background-color: #f44336;
+}
+
+.run {
+    background-color: #4CAF50;
+}
+
+.menu {
+    background-color: #008CBA;
+}
+
+#toggle-3d {
+    background-color: #555;
 }
 
 .slider-group {
@@ -105,46 +124,4 @@ header h1 {
 .slider-label {
     display: block;
     margin-bottom: 5px;
-}
-
-.fancy-slider {
-    width: 100%;
-}
-
-.fancy-input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.btn-group {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-}
-
-.btn {
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.fancy-button {
-    background-color: #0066cc;
-    color: white;
-}
-
-.clear {
-    background-color: #e74c3c;
-}
-
-.run {
-    background-color: #27ae60;
-}
-
-.menu {
-    background-color: #8e44ad;
 }
