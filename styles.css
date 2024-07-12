@@ -7,8 +7,7 @@ body {
 
 #map-container {
     display: flex;
-    height: calc(100vh - 160px); /* Adjusted height to account for both headers */
-    position: relative;
+    height: calc(100vh - 60px);
 }
 
 #map, #cesiumContainer { 
@@ -199,72 +198,29 @@ header {
     justify-content: space-between;
 }
 
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
 header .logo {
-    width: 100px; /* Adjusted width */
+    width: 50px; /* Adjusted width */
     height: auto; /* Maintain aspect ratio */
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 header h1 {
     margin: 0;
-    flex-grow: 1;
+    font-size: 1.5rem; /* Reduced size */
 }
 
-.navigation {
-    background-color: #444;
-    color: white;
-    padding: 0.5rem 1rem;
+header nav {
     display: flex;
-    justify-content: space-between;
+    gap: 1rem;
 }
 
-.nav-left a,
-.nav-right a {
+header nav a {
     color: white;
-    margin: 0 1rem;
     text-decoration: none;
-}
-
-.nav-left {
-    display: flex;
-    align-items: center;
-}
-
-.nav-right {
-    display: flex;
-    align-items: center;
-}
-
-#toggle-3d-map {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 0.5rem;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-.fancy-heading {
-    font-family: 'Georgia', serif;
-    font-size: 24px;
-    font-weight: bold;
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-
-.fancy-subheading {
-    font-family: 'Georgia', serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: #34495e;
-    margin-bottom: 10px;
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 1rem;
 }
