@@ -17,14 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
         alert("3D map view is not yet implemented.");
     };
 
-    // Toggle sidebar visibility
-    window.togglePanel = function() {
-        var sidebar = document.getElementById('sidebar');
-        sidebar.style.display = (sidebar.style.display === 'none') ? 'block' : 'none';
-        var toggleButton = document.getElementById('toggle-button');
-        toggleButton.textContent = (sidebar.style.display === 'none') ? '☰' : '×';
-    };
-
     // Slider functionality
     document.getElementById("pv-capex").addEventListener("input", function() {
         document.getElementById("pv-capex-value").textContent = this.value;
@@ -45,4 +37,14 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("discount-rate").addEventListener("input", function() {
         document.getElementById("discount-rate-value").textContent = this.value;
     });
+
+    // Toggle sidebar
+    window.togglePanel = function() {
+        var sidebar = document.getElementById("sidebar");
+        if (sidebar.style.display === "none") {
+            sidebar.style.display = "flex";
+        } else {
+            sidebar.style.display = "none";
+        }
+    };
 });
