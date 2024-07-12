@@ -203,7 +203,7 @@ header {
     align-items: center;
 }
 
-header .logo {
+.header-content img.logo {
     width: 50px; /* Adjusted width */
     height: auto; /* Maintain aspect ratio */
     margin-right: 10px;
@@ -211,16 +211,35 @@ header .logo {
 
 header h1 {
     margin: 0;
-    font-size: 1.5rem; /* Reduced size */
+    font-size: 1.5rem; /* Adjusted font size */
 }
 
 header nav {
     display: flex;
-    gap: 1rem;
+    align-items: center;
 }
 
 header nav a {
     color: white;
+    margin: 0 1rem;
     text-decoration: none;
-    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+header nav a i {
+    margin-right: 5px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right a {
+    color: white;
+    margin-left: 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }

@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to switch to 2D map
     window.switchTo2D = function() {
-        alert("Switching to 2D map");
         map.setView([20.5937, 78.9629], 5);
     };
 
@@ -17,16 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
     window.switchTo3D = function() {
         alert("3D map view is not yet implemented.");
     };
-
-    document.getElementById("toggle-3d-map").addEventListener("click", function() {
-        if (this.textContent === "3D") {
-            switchTo3D();
-            this.textContent = "2D";
-        } else {
-            switchTo2D();
-            this.textContent = "3D";
-        }
-    });
 
     // Slider functionality
     document.getElementById("pv-capex").addEventListener("input", function() {
@@ -51,12 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Toggle sidebar functionality
     window.togglePanel = function() {
-        var sidebar = document.getElementById("sidebar");
-        sidebar.classList.toggle("collapsed");
+        var sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('collapsed');
     };
-
-    // Function to update slider value display
-    function updateSliderValue(id, value) {
-        document.getElementById(id).textContent = value;
-    }
 });
