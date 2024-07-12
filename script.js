@@ -37,4 +37,10 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("discount-rate").addEventListener("input", function() {
         document.getElementById("discount-rate-value").textContent = this.value;
     });
+
+    // Toggle button functionality for the sidebar
+    window.togglePanel = function() {
+        var sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("collapsed");
+    };
 });
