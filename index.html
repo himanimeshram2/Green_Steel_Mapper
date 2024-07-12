@@ -12,6 +12,7 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
     <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -21,27 +22,26 @@
             <img src="images/iitb_monash_logo.png" alt="IITB Monash Logo" class="logo">
             <h1>Harit Ispat Manchitrak</h1>
         </div>
-        <nav>
-            <a href="#about"><i class="fas fa-info-circle"></i> About</a>
-            <a href="#layers"><i class="fas fa-layer-group"></i> Layers</a>
-            <a href="#location-search"><i class="fas fa-search-location"></i> Location Search</a>
-            <a href="#data-publications"><i class="fas fa-book"></i> Data & Publications</a>
-            <div class="nav-right">
-                <a href="#tools"><i class="fas fa-wrench"></i> Tools</a>
-                <a href="#clip"><i class="fas fa-paperclip"></i> Clip</a>
-                <a href="#map-narrator"><i class="fas fa-microphone"></i> Map Narrator</a>
-                <a href="#bookmarks"><i class="fas fa-bookmark"></i> Bookmarks</a>
-            </div>
-        </nav>
     </header>
+    <nav class="nav-tools">
+        <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="#layers"><i class="fas fa-layer-group"></i> Layers</a>
+        <a href="#location-search"><i class="fas fa-search-location"></i> Location Search</a>
+        <a href="#data-publications"><i class="fas fa-book"></i> Data & Publications</a>
+        <div class="nav-right">
+            <a href="#tools"><i class="fas fa-wrench"></i> Tools</a>
+            <a href="#clip"><i class="fas fa-paperclip"></i> Clip</a>
+            <a href="#map-narrator"><i class="fas fa-microphone"></i> Map Narrator</a>
+            <a href="#bookmarks"><i class="fas fa-bookmark"></i> Bookmarks</a>
+        </div>
+    </nav>
     <div id="map-container">
         <div id="map"></div>
         <div id="sidebar">
             <button id="toggle-button" onclick="togglePanel()">☰</button>
             <div id="sidebar-content">
                 <h2>Economic Fairways Mapper</h2>
-                <button onclick="switchTo2D()">2D Map</button>
-                <button onclick="switchTo3D()">3D Map</button>
+                <div class="icon" onclick="switchTo3D()">3D</div>
                 <div class="option">
                     <label>
                         <input type="radio" name="selection" checked> Point
@@ -98,7 +98,6 @@
                     <button class="btn fancy-button clear">Clear</button>
                     <button class="btn fancy-button run">Run Assessment</button>
                     <button class="btn fancy-button menu">Back to Menu</button>
-                    <button id="toggle-3d" class="btn fancy-button">Toggle 3D</button>
                 </div>
                 <button id="select-point">Select Point</button>
                 <div class="analysis">
