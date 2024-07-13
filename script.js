@@ -54,9 +54,11 @@ document.addEventListener("DOMContentLoaded", function() {
         if (sidebar.classList.contains("collapsed")) {
             toggleButton.style.left = "0px";
         } else {
-            toggleButton.style.left = "-40px";
+            toggleButton.style.left = "260px";
         }
         // Trigger map resize to adjust to the new sidebar width
-        map.invalidateSize();
+        setTimeout(function() {
+            map.invalidateSize();
+        }, 300); // Timeout matches the sidebar transition duration
     };
 });
