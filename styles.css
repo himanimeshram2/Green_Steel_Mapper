@@ -54,8 +54,7 @@ header .logo {
 
 #map-container {
     display: flex;
-    flex-direction: column;
-    height: calc(100vh - 110px); /* Adjusted height for header and footer */
+    height: calc(100vh - 140px); /* Adjusted height for header and footer */
 }
 
 #map {
