@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
     <header>
@@ -93,12 +93,12 @@
                     <button class="btn fancy-button run">Run Assessment</button>
                     <button class="btn fancy-button menu">Back to Menu</button>
                 </div>
-                <div id="mine-info">
-                    <h3>Iron Mine Details</h3>
-                    <p><b>Metallogenesis:</b> <span id="mine-metallogenesis"></span></p>
-                    <p><b>Locality:</b> <span id="mine-locality"></span></p>
-                    <p><b>Host Rock:</b> <span id="mine-hostrock"></span></p>
-                    <p><b>Morphogenesis:</b> <span id="mine-morphogenesis"></span></p>
+                <div class="mine-info">
+                    <h3>Mine Details</h3>
+                    <p><strong>Metallogenesis:</strong> <span id="mine-metallogenesis"></span></p>
+                    <p><strong>Locality:</strong> <span id="mine-locality"></span></p>
+                    <p><strong>Hostrock:</strong> <span id="mine-hostrock"></span></p>
+                    <p><strong>Morphogenesis:</strong> <span id="mine-morphogenesis"></span></p>
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@
         <a href="#copyright"><i class="fas fa-copyright"></i> Copyright</a>
         <a href="#disclaimer"><i class="fas fa-info-circle"></i> Disclaimer</a>
         <a href="#contact-us"><i class="fas fa-envelope"></i> Contact us</a>
-        <a href="#provide-feedback"><i class="fas fa-comments"></i> Provide Feedback</a>
+        <a href="#provide-feedback"><i class="fas fa-comment-dots"></i> Provide Feedback</a>
     </footer>
     <script src="script.js"></script>
 </body>

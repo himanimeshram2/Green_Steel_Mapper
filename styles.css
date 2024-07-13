@@ -61,18 +61,22 @@ header h1 {
     border-left: 1px solid #ddd;
     overflow-y: auto;
     position: relative;
+    transition: width 0.3s;
 }
 
 #toggle-button {
     position: absolute;
     top: 10px;
-    right: -40px;
+    left: -40px;
     width: 40px;
     height: 40px;
     background-color: #333;
     color: #fff;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #toggle-button:hover {
@@ -81,7 +85,6 @@ header h1 {
 
 #sidebar.collapsed {
     width: 0;
-    transition: width 0.3s;
 }
 
 #sidebar.collapsed #sidebar-content {
