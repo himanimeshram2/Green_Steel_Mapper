@@ -85,6 +85,7 @@ header .logo {
     top: 10px;
     left: -40px; /* Position the button to the left of the sidebar */
     z-index: 1000;
+    font-size: 1.5rem; /* Ensure the button text is large enough */
 }
 
 #sidebar-content {
