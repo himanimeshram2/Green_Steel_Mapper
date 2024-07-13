@@ -42,5 +42,12 @@ document.addEventListener("DOMContentLoaded", function() {
     window.togglePanel = function() {
         var sidebar = document.getElementById("sidebar");
         sidebar.classList.toggle("collapsed");
+        // Adjust the toggle button's left position when sidebar is collapsed/expanded
+        var toggleButton = document.getElementById("toggle-button");
+        if (sidebar.classList.contains("collapsed")) {
+            toggleButton.style.left = "0px";
+        } else {
+            toggleButton.style.left = "-40px";
+        }
     };
 });
