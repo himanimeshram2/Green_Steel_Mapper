@@ -56,5 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             toggleButton.style.left = "-40px";
         }
+        // Trigger map resize to adjust to the new sidebar width
+        map.invalidateSize();
     };
 });
