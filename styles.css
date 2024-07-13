@@ -59,6 +59,7 @@ header .logo {
 
 #map {
     flex: 1;
+    height: 100%; /* Ensure the map takes up full height */
 }
 
 #sidebar {
