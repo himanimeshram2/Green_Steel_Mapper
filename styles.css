@@ -81,9 +81,9 @@ header .logo {
     border: none;
     padding: 0.5rem;
     cursor: pointer;
-    position: fixed; /* Changed to fixed */
+    position: absolute; /* Changed to absolute */
     top: 10px;
-    left: 310px; /* Adjusted position to the right of the sidebar */
+    right: -40px; /* Adjusted position to the right of the sidebar */
     z-index: 1000;
     font-size: 1.5rem; /* Ensure the button text is large enough */
     height: 40px; /* Ensure the button has enough height */
@@ -93,8 +93,8 @@ header .logo {
     border-radius: 5px; /* Rounded corners */
 }
 
-#sidebar.collapsed + #toggle-button {
-    left: 50px; /* Adjusted position for collapsed sidebar */
+#sidebar.collapsed #toggle-button {
+    right: -40px; /* Adjusted position for collapsed sidebar */
 }
 
 #sidebar-content {
