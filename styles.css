@@ -116,6 +116,19 @@ h1 {
     border: none;
     color: white;
     cursor: pointer;
+    background-color: #4CAF50; /* Default background color */
+    box-shadow: 0 5px #666; /* 3D shadow effect */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.fancy-button:hover {
+    background-color: #45a049; /* Hover background color */
+}
+
+.fancy-button:active {
+    background-color: #45a049; /* Active background color */
+    box-shadow: 0 2px #666; /* 3D shadow effect on click */
+    transform: translateY(4px); /* Move button down on click */
 }
 
 .clear {
