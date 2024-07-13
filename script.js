@@ -26,10 +26,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Add markers for iron mines in India
     var ironMines = [
-        { name: "Mine A", lat: 21.1702, lon: 79.0750 },
-        { name: "Mine B", lat: 22.5726, lon: 88.3639 },
-        { name: "Mine C", lat: 23.8103, lon: 86.7111 },
-        { name: "Mine D", lat: 22.3511, lon: 78.6677 }
+        { name: "Bababudan Range", lat: 13.41666667, lon: 75.75, locality: "Attigundi Galikera"},
+        { name: "Bababudan Range", lat: 13.53333333, lon: 75.75, locality: "Kemmanagundi"},
+        { name: "Bailadila", lat: 18.66666667, lon: 81.18333333, locality: "Bailadila"},
+        { name: "Bellary (Sandur Schist Belt)", lat: 15.07083333, lon: 76.83888889, locality: "Obulapuram"},
+        { name: "Bonai Badampahar Belt", lat: 21.8, lon: 85.26666667, locality: "Badamgarh"}
     ];
 
     ironMines.forEach(function(mine) {
