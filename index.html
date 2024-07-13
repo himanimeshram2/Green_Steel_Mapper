@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harit Ispat Manchitrak</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cesium/1.84/Widgets/widgets.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.css"/>
@@ -13,6 +12,204 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
     <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .nav-tools {
+            background-color: #0066cc;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        .nav-tools a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-tools a i {
+            margin-right: 5px;
+        }
+
+        #map-container {
+            display: flex;
+            height: calc(100vh - 140px);
+        }
+
+        #map {
+            flex: 1;
+        }
+
+        #sidebar {
+            width: 300px;
+            background-color: #fff;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            overflow-y: auto;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        #sidebar.collapsed {
+            width: 40px;
+        }
+
+        #toggle-button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            left: -40px; /* Position the button to the left of the sidebar */
+            z-index: 1000;
+        }
+
+        #sidebar-content {
+            padding: 20px;
+        }
+
+        #sidebar.collapsed #sidebar-content {
+            display: none;
+        }
+
+        #sidebar h2 {
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .fancy-label {
+            font-weight: bold;
+        }
+
+        .fancy-slider {
+            width: 100%;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .fancy-button {
+            padding: 10px;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .clear {
+            background-color: #f44336;
+        }
+
+        .run {
+            background-color: #4CAF50;
+        }
+
+        .menu {
+            background-color: #008CBA;
+        }
+
+        .slider-group {
+            margin-bottom: 15px;
+        }
+
+        .slider-label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Adding visual cues */
+        .form-group input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 5px;
+            background: #ddd;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity .2s;
+        }
+
+        .form-group input[type="range"]:hover {
+            opacity: 1;
+        }
+
+        .form-group input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        .form-group input[type="range"]::-moz-range-thumb {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        /* Making it responsive */
+        @media (max-width: 768px) {
+            #sidebar {
+                width: 100%;
+                height: 300px;
+                position: relative;
+            }
+
+            #map-container {
+                flex-direction: column;
+                height: calc(100vh - 180px);
+            }
+
+            #map {
+                height: calc(100vh - 480px);
+            }
+
+            #toggle-button {
+                left: calc(100% - 40px);
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -118,6 +315,60 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Initialize the map
+            var map = L.map('map').setView([20.5937, 78.9629], 5); // Centered on India
+
+            // Add OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Function to switch to 2D map
+            window.switchTo2D = function() {
+                map.setView([20.5937, 78.9629], 5);
+            };
+
+            // Function to switch to 3D map
+            window.switchTo3D = function() {
+                alert("3D map view is not yet implemented.");
+            };
+
+            // Slider functionality
+            document.getElementById("pv-capex").addEventListener("input", function() {
+                document.getElementById("pv-capex-value").textContent = this.value;
+            });
+
+            document.getElementById("wind-capex").addEventListener("input", function() {
+                document.getElementById("wind-capex-value").textContent = this.value;
+            });
+
+            document.getElementById("hybrid-capex").addEventListener("input", function() {
+                document.getElementById("hybrid-capex-value").textContent = this.value;
+            });
+
+            document.getElementById("iron-ore-price").addEventListener("input", function() {
+                document.getElementById("iron-ore-price-value").textContent = this.value;
+            });
+
+            document.getElementById("discount-rate").addEventListener("input", function() {
+                document.getElementById("discount-rate-value").textContent = this.value;
+            });
+
+            // Toggle sidebar
+            window.togglePanel = function() {
+                var sidebar = document.getElementById("sidebar");
+                sidebar.classList.toggle("collapsed");
+                // Adjust the toggle button's left position when sidebar is collapsed/expanded
+                var toggleButton = document.getElementById("toggle-button");
+                if (sidebar.classList.contains("collapsed")) {
+                    toggleButton.style.left = "0px";
+                } else {
+                    toggleButton.style.left = "-40px";
+                }
+            };
+        });
+    </script>
 </body>
 </html>
