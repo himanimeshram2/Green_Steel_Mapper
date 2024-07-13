@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Layer control
     L.control.layers(baseLayers).addTo(map);
 
-    // Iron mines data
     var ironMines = [
         { metallogenesis: "BABABUDAN RANGE", locality: "ATTIGUNDI-GALLIKERA", lat: 13.41666667, lon: 75.75, hostrock: "BHQ,METAPELITE,METAVOLCANICS", morphogenesis: "VOLCANOSEDIMENTARY-BEDDED" },
         { metallogenesis: "BABABUDAN RANGE", locality: "KEMMANAGUNDI", lat: 13.53333333, lon: 75.75, hostrock: "BHQ,METAPELITE,METAVOLCANICS", morphogenesis: "VOLCANOSEDIMENTARY-BEDDED" },
@@ -109,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ironMines.forEach(function(mine) {
         var marker = L.marker([mine.lat, mine.lon]).addTo(map);
         marker.on('click', function() {
+            document.querySelector('.mine-info').style.display = 'block';
             document.getElementById('mine-metallogenesis').textContent = mine.metallogenesis;
             document.getElementById('mine-locality').textContent = mine.locality;
             document.getElementById('mine-hostrock').textContent = mine.hostrock;
@@ -141,12 +141,11 @@ document.addEventListener("DOMContentLoaded", function() {
     window.togglePanel = function() {
         var sidebar = document.getElementById("sidebar");
         sidebar.classList.toggle("collapsed");
-        // Adjust the toggle button's left position when sidebar is collapsed/expanded
         var toggleButton = document.getElementById("toggle-button");
         if (sidebar.classList.contains("collapsed")) {
-            toggleButton.style.left = "0px";
-        } else {
             toggleButton.style.left = "-40px";
+        } else {
+            toggleButton.style.left = "0px";
         }
     };
 

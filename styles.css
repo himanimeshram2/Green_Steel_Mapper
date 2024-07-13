@@ -32,8 +32,9 @@ header h1 {
     display: flex;
     justify-content: space-around;
     background-color: #0066cc;
-    padding: 10px 0;
+    padding: 5px 0; /* Reduced padding */
     margin: 0;
+    font-size: 0.9em; /* Reduced font size */
 }
 
 .nav-tools a {
@@ -67,9 +68,9 @@ header h1 {
 #toggle-button {
     position: absolute;
     top: 10px;
-    left: -40px;
-    width: 40px;
-    height: 40px;
+    right: -40px; /* Adjusted */
+    width: 30px;
+    height: 30px;
     background-color: #333;
     color: #fff;
     border: none;
@@ -93,6 +94,10 @@ header h1 {
 
 #sidebar-content {
     padding: 20px;
+}
+
+.mine-info {
+    display: none;
 }
 
 .fancy-label {
