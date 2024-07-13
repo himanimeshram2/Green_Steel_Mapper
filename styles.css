@@ -84,7 +84,7 @@ header .logo {
     position: absolute; /* Changed to absolute */
     top: 10px;
     right: -40px; /* Adjusted position to the right of the sidebar */
-    z-index: 1000;
+    z-index: 1000; /* Ensure the button is above other elements */
     font-size: 1.5rem; /* Ensure the button text is large enough */
     height: 40px; /* Ensure the button has enough height */
     width: 40px; /* Ensure the button has enough width */
