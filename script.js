@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // Layer control
     L.control.layers(baseLayers).addTo(map);
 
+    // Ensure the map resizes correctly
+    map.invalidateSize();
+
     // Slider functionality
     document.getElementById("pv-capex").addEventListener("input", function() {
         document.getElementById("pv-capex-value").textContent = this.value;
