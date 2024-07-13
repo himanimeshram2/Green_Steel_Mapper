@@ -65,9 +65,9 @@ document.addEventListener("DOMContentLoaded", function() {
         // Adjust the toggle button's left position when sidebar is collapsed/expanded
         var toggleButton = document.getElementById("toggle-button");
         if (sidebar.classList.contains("collapsed")) {
-            toggleButton.style.right = "0px";
+            toggleButton.style.left = "50px";
         } else {
-            toggleButton.style.right = "-45px";
+            toggleButton.style.left = "310px";
         }
         // Trigger map resize to adjust to the new sidebar width
         setTimeout(function() {
