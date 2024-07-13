@@ -1,6 +1,7 @@
 body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
     font-family: Arial, sans-serif;
 }
 
@@ -53,7 +54,8 @@ header .logo {
 
 #map-container {
     display: flex;
-    height: calc(100vh - 200px); /* Adjust height for footer */
+    flex-direction: column;
+    height: calc(100vh - 110px); /* Adjusted height for header and footer */
 }
 
 #map {
@@ -202,11 +204,11 @@ header .logo {
 
     #map-container {
         flex-direction: column;
-        height: calc(100vh - 240px); /* Adjust height for footer */
+        height: calc(100vh - 240px); /* Adjust height for header and footer */
     }
 
     #map {
-        height: calc(100vh - 520px); /* Adjust height for footer */
+        height: calc(100vh - 520px); /* Adjust height for header and footer */
     }
 
     #toggle-button {
