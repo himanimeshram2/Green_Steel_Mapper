@@ -11,21 +11,23 @@ header {
     padding: 10px;
     background-color: #333;
     color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.logo-container {
+header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-family: 'Arial Black', sans-serif;
+}
+
+header .logo-container {
     display: flex;
     align-items: center;
 }
 
-.logo {
+header .logo {
     height: 50px;
     margin-right: 10px;
-}
-
-h1 {
-    font-size: 1.5rem;
-    margin: 0;
 }
 
 .nav-tools {
@@ -35,6 +37,7 @@ h1 {
     justify-content: space-around;
     padding: 10px;
     font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .nav-tools a {
@@ -50,7 +53,7 @@ h1 {
 
 #map-container {
     display: flex;
-    height: calc(100vh - 140px);
+    height: calc(100vh - 200px); /* Adjust height for footer */
 }
 
 #map {
@@ -92,6 +95,7 @@ h1 {
 
 #sidebar h2 {
     margin-top: 0;
+    font-family: 'Arial Black', sans-serif;
 }
 
 .form-group {
@@ -198,11 +202,11 @@ h1 {
 
     #map-container {
         flex-direction: column;
-        height: calc(100vh - 180px);
+        height: calc(100vh - 240px); /* Adjust height for footer */
     }
 
     #map {
-        height: calc(100vh - 480px);
+        height: calc(100vh - 520px); /* Adjust height for footer */
     }
 
     #toggle-button {
@@ -214,4 +218,34 @@ h1 {
 .fa-icon {
     font-size: 2rem;
     color: red; /* Change color as needed */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1rem;
+}
+
+footer .footer-content a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+footer .footer-content a i {
+    margin-right: 5px;
 }
