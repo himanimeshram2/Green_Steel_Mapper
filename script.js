@@ -24,6 +24,19 @@ document.addEventListener("DOMContentLoaded", function() {
     // Ensure the map resizes correctly
     map.invalidateSize();
 
+    // Add markers for iron mines in India
+    var ironMines = [
+        { name: "Mine A", lat: 21.1702, lon: 79.0750 },
+        { name: "Mine B", lat: 22.5726, lon: 88.3639 },
+        { name: "Mine C", lat: 23.8103, lon: 86.7111 },
+        { name: "Mine D", lat: 22.3511, lon: 78.6677 }
+    ];
+
+    ironMines.forEach(function(mine) {
+        L.marker([mine.lat, mine.lon]).addTo(map)
+            .bindPopup("<b>" + mine.name + "</b><br>Latitude: " + mine.lat + "<br>Longitude: " + mine.lon);
+    });
+
     // Slider functionality
     document.getElementById("pv-capex").addEventListener("input", function() {
         document.getElementById("pv-capex-value").textContent = this.value;
@@ -52,9 +65,9 @@ document.addEventListener("DOMContentLoaded", function() {
         // Adjust the toggle button's left position when sidebar is collapsed/expanded
         var toggleButton = document.getElementById("toggle-button");
         if (sidebar.classList.contains("collapsed")) {
-            toggleButton.style.left = "0px";
+            toggleButton.style.right = "0px";
         } else {
-            toggleButton.style.left = "260px";
+            toggleButton.style.right = "-45px";
         }
         // Trigger map resize to adjust to the new sidebar width
         setTimeout(function() {
