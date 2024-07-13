@@ -109,16 +109,18 @@ h1 {
 .btn-group {
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
 }
 
 .fancy-button {
-    padding: 10px;
+    padding: 10px 20px;
     border: none;
     color: white;
     cursor: pointer;
     background-color: #4CAF50; /* Default background color */
     box-shadow: 0 5px #666; /* 3D shadow effect */
     transition: all 0.3s ease; /* Smooth transition */
+    border-radius: 5px; /* Rounded corners */
 }
 
 .fancy-button:hover {
